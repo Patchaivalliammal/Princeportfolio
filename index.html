@@ -6,107 +6,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prince Anthony Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: #0a0f1c;
-  color: white;
-  scroll-behavior: smooth;
+body{
+    background:linear-gradient(120deg,#1e3c72,#2a5298);
+    color:white;
+    scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  width: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  padding: 15px;
+header{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.3);
+    position:fixed;
+    width:100%;
 }
 
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
+header h1{color:#00ffd5;}
+
+nav a{
+    margin:0 15px;
+    color:white;
+    text-decoration:none;
 }
 
-nav a:hover {
-  color: #00f7ff;
+section{
+    padding:100px 50px;
+    min-height:100vh;
 }
 
 /* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.profile {
-  width: 180px;
-  border-radius: 50%;
-  border: 3px solid #00f7ff;
-  animation: float 3s ease-in-out infinite;
+.hero-text{
+    max-width:50%;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+.hero h2{
+    font-size:40px;
 }
 
-.typing {
-  color: #00f7ff;
-  margin-top: 10px;
+.hero span{
+    color:#00ffd5;
 }
 
-/* SECTIONS */
-section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
+/* Animated Character */
+.character{
+    width:250px;
+    animation:float 3s ease-in-out infinite;
 }
 
-h2 {
-  margin-bottom: 20px;
-  border-left: 4px solid #00f7ff;
-  padding-left: 10px;
+.hand{
+    transform-origin:bottom center;
+    animation:wave 1.5s infinite;
 }
 
-.card {
-  background: #111827;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  transition: 0.3s;
+/* Animations */
+@keyframes wave{
+    0%{transform:rotate(0deg);}
+    50%{transform:rotate(25deg);}
+    100%{transform:rotate(0deg);}
 }
 
-.card:hover {
-  transform: translateY(-5px);
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
 }
 
-.skills span {
-  background: #00f7ff;
-  color: black;
-  padding: 6px 12px;
-  margin: 5px;
-  display: inline-block;
-  border-radius: 5px;
+/* Cards */
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    transition:0.3s;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #020617;
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* Skills */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.skills div{
+    background:#00ffd5;
+    color:black;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:20px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
 }
 </style>
 
@@ -114,91 +127,101 @@ footer {
 
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-</nav>
+<header>
+    <h1>Prince</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+    </nav>
+</header>
 
-<div class="hero" id="home">
-  <img class="profile" src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif">
-  <h1>Hi, I'm Prince Anthony 👋</h1>
-  <p class="typing" id="typing"></p>
-</div>
+<section class="hero">
+    <div class="hero-text">
+        <h2>Hi 👋 I'm <span>Prince Anthony</span></h2>
+        <p>A passionate BCA graduate looking to grow in technology and industry.</p>
+    </div>
+
+```
+<!-- Animated SVG Character -->
+<svg class="character" viewBox="0 0 200 200">
+    <circle cx="100" cy="60" r="30" fill="#ffd5a5"/>
+    <rect x="60" y="90" width="80" height="80" fill="#333"/>
+
+    <!-- Left hand -->
+    <rect x="40" y="100" width="20" height="50" fill="#ffd5a5"/>
+
+    <!-- Right waving hand -->
+    <rect class="hand" x="140" y="100" width="20" height="50" fill="#ffd5a5"/>
+</svg>
+```
+
+</section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>BCA graduate seeking opportunities in IT and operations. Quick learner with strong communication skills.</p>
-  </div>
+    <h2>About Me</h2>
+    <p>
+    Motivated and hardworking individual seeking an entry-level opportunity to develop technical and operational skills.
+    Passionate about learning and contributing to productivity and innovation.
+    </p>
 </section>
 
 <section id="skills">
-  <h2>Skills</h2>
-  <div class="card skills">
-    <span>HTML</span>
-    <span>Java</span>
-    <span>MS Excel</span>
-    <span>Communication</span>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Smart Fish Disease Detection</h3>
-    <p>AI project for detecting fish diseases.</p>
-  </div>
+    <h2>Skills</h2>
+    <div class="skills">
+        <div>Java</div>
+        <div>HTML</div>
+        <div>VS Code</div>
+        <div>Excel</div>
+        <div>Photoshop</div>
+        <div>Communication</div>
+        <div>Leadership</div>
+    </div>
 </section>
 
 <section id="experience">
-  <h2>Experience</h2>
-  <div class="card">
-    <p>Cashier & Customer Handling</p>
-  </div>
+    <h2>Experience</h2>
+
+```
+<div class="card">
+    <h3>Tourist Guide & Sales</h3>
+    <p>Yacht Charter Company (2023–2026)</p>
+</div>
+
+<div class="card">
+    <h3>Cashier</h3>
+    <p>Edayam Supermarket</p>
+</div>
+
+<div class="card">
+    <h3>General Manager</h3>
+    <p>Quantum Spark Studio</p>
+</div>
+```
+
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>📞 8056225735</p>
-    <p>📧 princeanthony2452@gmail.com</p>
-  </div>
+<section id="projects">
+    <h2>Projects</h2>
+
+```
+<div class="card">
+    <h3>Smart Fish Assistance</h3>
+    <p>AI-based fish cleaning and cooking assistant</p>
+</div>
+
+<div class="card">
+    <h3>Pet Care Platform</h3>
+    <p>App for pet food, spa, and services</p>
+</div>
+```
+
 </section>
 
 <footer>
-  <p>© 2026 Prince Anthony</p>
+    <p>© 2026 Prince Anthony | Portfolio</p>
 </footer>
-
-<script>
-const words = ["Web Developer", "Quick Learner", "Job Seeker"];
-let i = 0, j = 0, current = "", deleting = false;
-
-function type() {
-  current = words[i];
-
-  if (!deleting) {
-    document.getElementById("typing").innerHTML = current.substring(0, j++);
-    if (j > current.length) {
-      deleting = true;
-      setTimeout(type, 1000);
-      return;
-    }
-  } else {
-    document.getElementById("typing").innerHTML = current.substring(0, j--);
-    if (j < 0) {
-      deleting = false;
-      i = (i + 1) % words.length;
-    }
-  }
-  setTimeout(type, deleting ? 50 : 100);
-}
-
-type();
-</script>
 
 </body>
 </html>
