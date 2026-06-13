@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Anthony Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0a0f1c;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #00f7ff;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  width: 180px;
+  border-radius: 50%;
+  border: 3px solid #00f7ff;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.typing {
+  color: #00f7ff;
+  margin-top: 10px;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  border-left: 4px solid #00f7ff;
+  padding-left: 10px;
+}
+
+.card {
+  background: #111827;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.skills span {
+  background: #00f7ff;
+  color: black;
+  padding: 6px 12px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+  <img class="profile" src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif">
+  <h1>Hi, I'm Prince Anthony 👋</h1>
+  <p class="typing" id="typing"></p>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>BCA graduate seeking opportunities in IT and operations. Quick learner with strong communication skills.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span>HTML</span>
+    <span>Java</span>
+    <span>MS Excel</span>
+    <span>Communication</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Smart Fish Disease Detection</h3>
+    <p>AI project for detecting fish diseases.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="card">
+    <p>Cashier & Customer Handling</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>📞 8056225735</p>
+    <p>📧 princeanthony2452@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Prince Anthony</p>
+</footer>
+
+<script>
+const words = ["Web Developer", "Quick Learner", "Job Seeker"];
+let i = 0, j = 0, current = "", deleting = false;
+
+function type() {
+  current = words[i];
+
+  if (!deleting) {
+    document.getElementById("typing").innerHTML = current.substring(0, j++);
+    if (j > current.length) {
+      deleting = true;
+      setTimeout(type, 1000);
+      return;
+    }
+  } else {
+    document.getElementById("typing").innerHTML = current.substring(0, j--);
+    if (j < 0) {
+      deleting = false;
+      i = (i + 1) % words.length;
+    }
+  }
+  setTimeout(type, deleting ? 50 : 100);
+}
+
+type();
+</script>
+
+</body>
+</html>
